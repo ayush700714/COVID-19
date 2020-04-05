@@ -48,305 +48,305 @@
             android:background="@drawable/backdrop"
             android:id="@+id/bottomsheet"
             android:layout_height="match_parent"
-            app:behavior_hideable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginTop="0dp">
             <androidx.core.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:padding="10dp"
-
-                android:layout_height="match_parent">
-
-
-                <com.google.android.material.textfield.TextInputLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="How Old Are You?"
                     android:padding="10dp"
-                    android:id="@+id/age"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:boxStrokeColor="@color/colorPrimary"
-                    app:boxStrokeWidth="1dp"
-                    app:hintTextColor="@color/colorPrimary"
-                    app:hintEnabled="true"
-                    android:textColorHint="@color/colorAccent"
-                    app:hintTextAppearance="@color/colorPrimary"
-                    android:layout_margin="10dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:inputType="number"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                     />
-                </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_height="match_parent">
 
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/gender"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="What is your gender?"
-                    android:layout_below="@id/age"/>
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/gen"
-                    android:layout_margin="10dp"
-                    android:layout_below="@id/gender"
-                    android:orientation="vertical">
-                    <RadioButton
-                        android:id="@+id/first"
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:id="@+id/age"
+                        android:hint="How Old Are You?"
                         android:padding="10dp"
                         android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
+                        app:hintTextColor="@color/colorPrimary"
+                        app:hintEnabled="true"
+                        android:textColorHint="@color/colorAccent"
+                        app:hintTextAppearance="@color/colorPrimary"/>
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Male"/>
-                    <RadioButton
-                        android:id="@+id/second"
+                        android:id="@+id/gender"
                         android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Female"/>
-                    <RadioButton
-                        android:id="@+id/third"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Others"/>
-                </RadioGroup>
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="What is your gender?"
+                        android:layout_below="@id/age"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/temp"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="What is your current body temperature?"
-                    android:layout_below="@id/gen"/>
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/gen"
+                        android:checkedButton="@+id/normal"
+                        android:layout_margin="10dp"
+                        android:layout_below="@id/gender"
+                        android:orientation="vertical">
+                        <RadioButton
+                            android:id="@+id/first"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Male"/>
+                        <RadioButton
+                            android:id="@+id/second"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Female"/>
+                        <RadioButton
+                            android:id="@+id/third"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Others"/>
+                    </RadioGroup>
 
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/temperature"
-                    android:layout_below="@id/temp"
-                    android:orientation="vertical">
-                    <RadioButton
-                        android:id="@+id/normal"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Normal (96'F-98'F)"/>
-                    <RadioButton
-                        android:id="@+id/fever"
+                        android:id="@+id/temp"
                         android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fever (98.6'F-102'F)"/>
-                    <RadioButton
-                        android:id="@+id/highfever"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="High Fever (>102'F)"/>
-                    <RadioButton
-                        android:id="@+id/dontknow"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Dont know"/>
-                </RadioGroup>
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="What is your current body temperature?"
+                        android:layout_below="@id/gen"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/symptoms"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="Are you experiencing any of the symptoms below?"
-                    android:layout_below="@id/temperature"/>
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:checkedButton="@+id/normal"
+                        android:id="@+id/temperature"
+                        android:layout_below="@id/temp"
+                        android:orientation="vertical">
+                        <RadioButton
+                            android:id="@+id/normal"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Normal (96'F-98'F)"/>
+                        <RadioButton
+                            android:id="@+id/fever"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fever (98.6'F-102'F)"/>
+                        <RadioButton
+                            android:id="@+id/highfever"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High Fever (>102'F)"/>
+                        <RadioButton
+                            android:id="@+id/dontknow"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dont know"/>
+                    </RadioGroup>
 
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/symp"
-                    android:layout_below="@id/symptoms"
-                    android:orientation="vertical">
-                    <CheckBox
-                        android:id="@+id/cough"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Dry cough (Moderate or severe)"/>
-                    <CheckBox
-                        android:id="@+id/smell"
+                        android:id="@+id/symptoms"
                         android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Loss of smell"/>
-                    <CheckBox
-                        android:id="@+id/sore"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sore throat"/>
-                    <CheckBox
-                        android:id="@+id/weak"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Weakness"/>
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Are you experiencing any of the symptoms below?"
+                        android:layout_below="@id/temperature"/>
 
-                    <CheckBox
-                        android:id="@+id/bl"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
+                    <RadioGroup
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Difficulty in breathing"/>
+                        android:layout_margin="10dp"
+                        android:id="@+id/symp"
+                        android:layout_below="@id/symptoms"
+                        android:orientation="vertical">
+                        <CheckBox
+                            android:id="@+id/cough"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dry cough (Moderate or severe)"/>
+                        <CheckBox
+                            android:id="@+id/smell"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Loss of smell"/>
+                        <CheckBox
+                            android:id="@+id/sore"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sore throat"/>
+                        <CheckBox
+                            android:id="@+id/weak"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weakness"/>
 
-
-                    <CheckBox
-                        android:id="@+id/none"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="None of the above"/>
-
-                </RadioGroup>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/travel"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="Please select yout travel and exposure details"
-                    android:layout_below="@id/symp"/>
-
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:checkedButton="@+id/normal"
-                    android:layout_margin="10dp"
-                    android:id="@+id/history"
-                    android:layout_below="@id/travel"
-                    android:orientation="vertical">
-                    <RadioButton
-                        android:id="@+id/no"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="No travel history"/>
-                    <RadioButton
-                        android:id="@+id/nocon"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="No contact with anyone with symptoms"/>
-                    <RadioButton
-                        android:id="@+id/his"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="History of travel or meeting in infected area in last 14 days"/>
-                    <RadioButton
-                        android:id="@+id/closecon"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Close contact with confirmed COVID19 case in last 14 days"/>
-                </RadioGroup>
+                        <CheckBox
+                            android:id="@+id/bl"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Difficulty in breathing"/>
 
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ill"
-                    android:padding="10dp"
-                    android:layout_margin="10dp"
-                    android:textColor="@color/colorPrimaryDark"
-                    android:text="Do you have any history of these condition?"
-                    android:layout_below="@id/history"/>
+                        <CheckBox
+                            android:id="@+id/none"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above"/>
 
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/illness"
-                    android:layout_below="@id/ill"
-                    android:orientation="vertical">
-                    <CheckBox
-                        android:id="@+id/dia"
+                    </RadioGroup>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/travel"
                         android:padding="10dp"
-                        android:textColor="@color/colorAccent"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Please select yout travel and exposure details"
+                        android:layout_below="@id/symp"/>
+
+                    <RadioGroup
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Diabetes"/>
-                    <CheckBox
-                        android:id="@+id/bp"
+                        android:checkedButton="@+id/normal"
+                        android:layout_margin="10dp"
+                        android:id="@+id/history"
+                        android:layout_below="@id/travel"
+                        android:orientation="vertical">
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No travel history"/>
+                        <RadioButton
+                            android:id="@+id/nocon"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="No contact with anyone with symptoms"/>
+                        <RadioButton
+                            android:id="@+id/his"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="History of travel or meeting in infected area in last 14 days"/>
+                        <RadioButton
+                            android:id="@+id/closecon"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Close contact with confirmed COVID19 case in last 14 days"/>
+                    </RadioGroup>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ill"
                         android:padding="10dp"
-                        android:textColor="@color/colorAccent"
+                        android:layout_margin="10dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:text="Do you have any history of these condition?"
+                        android:layout_below="@id/history"/>
+
+                    <RadioGroup
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="High blood pressure"/>
-                    <CheckBox
-                        android:id="@+id/heart"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
+                        android:layout_margin="10dp"
+                        android:id="@+id/illness"
+                        android:layout_below="@id/ill"
+                        android:orientation="vertical">
+                        <CheckBox
+                            android:id="@+id/dia"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Diabetes"/>
+                        <CheckBox
+                            android:id="@+id/bp"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="High blood pressure"/>
+                        <CheckBox
+                            android:id="@+id/heart"
+                            android:padding="10dp"
+
+
+
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Heart disease"/>
+                        <CheckBox
+                            android:id="@+id/lung"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Lung disease"/>
+
+                        <CheckBox
+                            android:id="@+id/nota"
+                            android:padding="10dp"
+                            android:textColor="@color/colorAccent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="None of the above"/>
+
+
+                    </RadioGroup>
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Heart disease"/>
-                    <CheckBox
-                        android:id="@+id/lung"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lung disease"/>
+                        android:id="@+id/fab"
 
-                    <CheckBox
-                        android:id="@+id/nota"
-                        android:padding="10dp"
-                        android:textColor="@color/colorAccent"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="None of the above"/>
+                        android:layout_alignParentBottom="true"
+                        android:src="@drawable/proceed"
+                       android:layout_alignParentEnd="true"
+                        android:layout_margin="8dp"/>
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
 
-
-                </RadioGroup>
-
-            </RelativeLayout>
-        </androidx.core.widget.NestedScrollView>
-
-    </LinearLayout>
+        </LinearLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

@@ -1,4 +1,4 @@
-package com.example.covid19;
+package com.example.covid_19;
 
 import org.junit.Test;
 
