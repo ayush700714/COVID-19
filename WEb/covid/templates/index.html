@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        body {
+            margin: 1rem;
+            padding: 1rem;
+            background-color: #111;
+        }
+        
+        p.start-line {
+            text-align: center;
+            color: aliceblue;
+            font-family: serif;
+            font-size: 30px;
+        }
+        
+        .start-line:hover {
+            text-decoration: line-through;
+        }
+        
+        button {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        form {
+            margin-top: 5rem;
+        }
+        
+        .ques,
+        .sues,
+        .kues,
+        .gues,
+        .mues,
+        .lues {
+            color: whitesmoke;
+            font-family: serif;
+            text-transform: capitalize;
+        }
+        
+        .mues {
+            left: 0%;
+            text-align: left;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .side {
+            display: none;
+        }
+        
+        .kide {
+            display: none;
+        }
+        
+        .gide {
+            display: none;
+        }
+        
+        .mide {
+            display: none;
+        }
+        
+        .lide {
+            display: none;
+        }
+        
+        .ques:hover {
+            text-decoration: line-through;
+        }
+        
+        .kues:hover {
+            text-decoration: line-through;
+        }
+        
+        .sues:hover {
+            text-decoration: line-through;
+        }
+        
+        .gues:hover {
+            text-decoration: line-through;
+        }
+        
+        .mues:hover {
+            text-decoration: line-through;
+        }
+        
+        .lues:hover {
+            text-decoration: line-through;
+        }
+        
+        .AgeOptions {
+            padding: 30px;
+            color: azure;
+        }
+        
+        .hide>label {
+            padding: 8px;
+        }
+        
+        .side>label {
+            padding: 8px;
+        }
+        
+        .kide>label {
+            padding: 8px;
+        }
+        
+        .gide>label {
+            padding: 8px;
+        }
+        
+        .mide>label {
+            padding: 8px;
+        }
+        
+        .lide>label {
+            padding: 8px;
+        }
+        
+        .GenderOptions {
+            padding: 30px;
+            color: azure;
+        }
+        
+        .TempOptions {
+            padding: 30px;
+            color: azure;
+        }
+        
+        .TempOptions>label {
+            padding: 8px;
+        }
+        
+        .SymptomOptions {
+            padding: 30px;
+            color: azure;
+        }
+        
+        .TravelOptions {
+            padding: 30px;
+            color: azure;
+        }
+        
+        .MedicalHistory {
+            padding: 30px;
+            color: azure;
+        }
+        
+        label:hover {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p class="start-line">{{name|capitalize}}, We Are Now Ready For The Test </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <form action="{{url_for('detail')}}" method="POST">
+                    <div class="AgeOptions">
+                        <p class="ques">Select your age </p>
+                        <div class="hide">
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio1" value="0"> Below 5 
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio2" value="1"> 6 to 15
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio3" value="2"> 16 to 25
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio4" value="3"> 26 to 35
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio5" value="4"> 36 to 45
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio6" value="5"> 46 to 55
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio7" value="6"> 56 to 65
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio8" value="7"> 66 to 75
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineAgeRadioOptions" id="inlineAgeRadio9" value="8">Above 75
+                            </label>
+                        </div>
+                    </div>
+                    <div class="GenderOptions">
+                        <p class="sues">Select your gender </p>
+                        <div class="side">
+                            <label class="radio-inline">
+								<input type="radio" name="inlineGenderOptions" id="inlineGenderRadio1" value="0"> Male
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineGenderOptions" id="inlineGenderRadio2" value="1"> Female
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineGenderOptions" id="inlineGenderRadio3" value="2"> Others
+							</label>
+                        </div>
+                    </div>
+                    <div class="TempOptions">
+                        <p class="kues">Select your body temperature </p>
+                        <div class="kide">
+                            <label class="radio-inline">
+								<input type="radio" name="inlineTempOptions" id="inlineTempRadio1" value="0"> Normal (96&#8457-96.8&#8457)
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineTempOptions" id="inlineGenderRadio1" value="1"> Fever (98.6&#8457-102.6&#8457 )
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" name="inlineTempOptions" id="inlineGenderRadio1" value="2"> High Fever (>102.6&#8457)
+							</label>
+                        </div>
+                    </div>
+                    <div class="SymptomOptions">
+                        <p class="gues">Select your symptoms </p>
+                        <div class="gide">
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox1" value="0" name="symptoms"> Dry Cough
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox2" value="1" name="symptoms"> Loss or Diminished Sense of Smell
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox3" value="2" name="symptoms"> Sore Throat
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox1" value="3" name="symptoms"> Weakness
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox2" value="4" name="symptoms"> Change in appetite
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox1" value="5" name="symptoms"> Feeling breathless
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox2" value="6" name="symptoms"> Drowsiness
+							</label>
+                            <label class="checkbox-inline">
+								<input type="checkbox" id="inlineCheckbox3" value="7"name="symptoms"> Persistent Pain and pressure in chest
+							</label>
+                        </div>
+                    </div>
+                    <div class="TravelOptions">
+                        <p class="mues">Select your travel or exposure details </p>
+                        <div class="mide">
+                            <label class="radio-inline">
+								<input type="radio" id="TravelSafe1" value="0" name="travel"> No Travel History
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" id="TravelSafe2" value="1" name="travel"> No contact with anyone with symptoms
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" id="Danger1" value="2" name="travel"> History of travel or meeting in affected area in last 14 days
+							</label>
+                            <label class="radio-inline">
+								<input type="radio" id="Danger2" value="3" name="travel"> Close Contact with confirmed COVID in last 14 days
+							</label>
+                        </div>
+                        <div class="MedicalHistory">
+                            <p class="lues">Select your medical History </p>
+                            <div class="lide">
+                                <label class="checkbox-inline">
+								<input type="checkbox" id="Medical1" value="0" name="medical"> Diabetes
+							</label>
+                                <label class="checkbox-inline">
+								<input type="checkbox" id="Medical2" value="1" name="medical"> High Blood Pressure
+							</label>
+                                <label class="checkbox-inline">
+								<input type="checkbox" id="Medical3" value="2" name="medical"> Heart Disease or lung disease 
+							</label>
+                                <label class="checkbox-inline">
+								<input type="checkbox" id="Medical4" value="3" name="medical"> Reduced immunity
+							</label>
+                                <label class="checkbox-inline">
+								<input type="checkbox" id="MedicalNone" value="4" name="medical"> None of these
+							</label>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(function() {
+                $('.ques').hover(function() {
+                    $('.hide').slideDown("slow");
+                });
+                $('.kues').hover(function() {
+                    $('.kide').slideDown("slow");
+                });
+                $('.gues').hover(function() {
+                    $('.gide').slideDown("slow");
+                });
+                $('.mues').hover(function() {
+                    $('.mide').slideDown("slow");
+                });
+                $('.lues').hover(function() {
+                    $('.lide').slideDown("slow");
+                });
+                $('.sues').hover(function() {
+                    $('.side').slideDown("slow");
+                });
+
+            });
+        </script>
+</body>
+
+</html>

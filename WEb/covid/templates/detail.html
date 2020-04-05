@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Detail
+    </title>
+    <style>
+        #Detail {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        h2 {
+            text-align: center;
+            font-weight: bolder;
+            font-family: serif;
+        }
+        
+        .your {
+            text-align: center;
+            border: 4px solid black;
+            border-radius: 8px;
+        }
+        
+        h1,
+        p {
+            color: wheat;
+            font-size: large;
+        }
+        
+        li {
+            padding: 7px;
+            font-weight: bold;
+            color: darkslategrey;
+            font-size: 17px;
+        }
+        
+        li:hover {
+            text-decoration: line-through;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: black;">
+    <div id="Detail">
+        <h1>Dear {{name}}</h1>
+        <p>Your's Details</p>
+    </div>
+    <div class="your">
+
+        <ul>
+            <li>Age <span>---->    </span>{{age}}</li>
+            <li>Body temp <span>---->    </span>{{temp}}</li>
+            <li>Gender <span>---->    </span>{{gender}}</li>
+            <li>Symptoms <span>---->    </span>
+                <ol>
+                    {%for i in range(0,len_sy)%}
+                    <li>
+                        {{symptoms[i]}}
+                    </li>
+                    {%endfor%}
+                </ol>
+            </li>
+            <li>Travel <span>---->    </span>{{travel}}</li>
+            <li>Medicl Report <span>---->    </span>
+                <ol>
+                    {%for i in range(0,len_med)%}
+                    <li>
+                        {{medical[i]}}
+                    </li>
+                    {%endfor%}
+                </ol>
+            </li>
+        </ul>
+
+    </div>
+    <h2>On the basis of this we Predict Regarding Corona Virus Stage</h2>
+    <h2 style="color:red;">{{check}}</h2>
+</body>
+
+</html>
